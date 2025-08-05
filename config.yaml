@@ -1,0 +1,7 @@
+base_url: "https://practicesoftwaretesting.com/"
+
+good_email: "customer@practicesoftwaretesting.com"
+good_pw: "welcome01"
+
+bad_email: "fakeme@google.com"
+bad_pw: "123456789"

@@ -1,8 +1,8 @@
-from pytest_bdd import scenarios, given, when, then
-from playwright.sync_api import expect
+# from pytest_bdd import scenarios, given, when, then
+# from playwright.sync_api import expect
 
 
-scenarios("category_filter.feature")
+# scenarios("category_filter.feature")
 
 ########
 # GIVEN

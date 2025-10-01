@@ -2,6 +2,14 @@ import pytest
 import yaml
 from playwright.sync_api import sync_playwright
 from pages.login_page import LoginPage
+from pages.search_page import SearchPage
+
+@pytest.fixture
+def search_page(page, load_config):
+    print("DEBUG: Loading search_page fixture")
+    search_page = SearchPage(page, load_config["base_url"])
+    search_page.navigate()
+    return search_page
 
 @pytest.fixture(scope="session")
 def playwright():

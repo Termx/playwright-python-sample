@@ -1,7 +1,7 @@
 Basic template using Playwright with pytest-bdd, and YAML. (WORK IN PROGRESS)
 
 Prerequisites:
-- Python 3.13.5
+- Python 3.13.7
 - VS Code with Python extension
 
 Install Dependencies:

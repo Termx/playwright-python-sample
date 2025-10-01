@@ -1,4 +1,4 @@
-Basic template using Playwright with pytest-bdd, and YAML.
+Basic template using Playwright with pytest-bdd, and YAML. (WORK IN PROGRESS)
 
 Prerequisites:
 - Python 3.13.5
@@ -10,5 +10,5 @@ pip install -r requirements.txt
 ```
 Run tests:
 ```python
-python -m pytest
+python -m pytest -v
 ```

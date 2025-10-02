@@ -1,4 +1,4 @@
-Basic template using Playwright with pytest-bdd, and YAML. (WORK IN PROGRESS)
+Basic template using Playwright with Behave BDD, and YAML. (WORK IN PROGRESS)
 
 Prerequisites:
 - Python 3.13.7
@@ -10,5 +10,9 @@ pip install -r requirements.txt
 ```
 Run tests:
 ```python
-python -m pytest -v
+behave
 ```
+Run a specific file or test:
+```python
+behave features/xxxx.feature
+behave features/xxxx.feature:xx (xx is line number)

@@ -1,6 +1,7 @@
 # Core dependencies
 behave==1.2.6
 playwright==1.55.0
+PyYAML==6.0.3
 
 # Optional: colorized console output
 colorama==0.4.6

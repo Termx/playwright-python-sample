@@ -1,7 +1,5 @@
 Feature: Search
-    As a user
-    I want to search for products
-    So that I can find items I want to purchase
+    Able to search for prodcuts
 
     Background:
         Given I navigate to the Home page

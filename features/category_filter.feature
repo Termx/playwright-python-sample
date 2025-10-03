@@ -1,7 +1,5 @@
 Feature: Category Filter
-    As a user
-    I want to filter products by category
-    So that I can easily find items I want to purchase
+    Able to filter products by category
 
     Background:
     Given I navigate to the Home page

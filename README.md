@@ -1,4 +1,4 @@
-Basic template using Playwright with Behave BDD, and YAML. (WORK IN PROGRESS)
+Basic template using Playwright with Behave BDD, and YAML.
 
 Prerequisites:
 - Python 3.13.7

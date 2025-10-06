@@ -62,7 +62,7 @@ class LoginPage:
         expect(self.page.locator('div[role="alert"]')).to_have_text('Your password is successfully updated!', timeout=5000)
     
     def password_reset_invalid_email_error(self):
-        expect(self.page.locator('div[role="alert"]')).to_have_text('The selected email is invalid.', timeout=5000)
+        expect(self.page.locator('div[id="email-error"]')).to_have_text('The selected email is invalid.', timeout=5000)
     
     def password_reset_no_email_error(self):
         expect(self.page.locator('div[id="email-error"]')).to_have_text('Email is required', timeout=5000)

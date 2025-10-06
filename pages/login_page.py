@@ -59,7 +59,7 @@ class LoginPage:
         self.page.click(self.forgot_password_button)
     
     def password_reset_message(self):
-        expect(self.page.locator('div[role="alert"]')).to_have_text('page.forgot-password.confirm', timeout=5000)
+        expect(self.page.locator('div[role="alert"]')).to_have_text('Your password is successfully updated!', timeout=5000)
     
     def password_reset_invalid_email_error(self):
         expect(self.page.locator('div[role="alert"]')).to_have_text('The selected email is invalid.', timeout=5000)

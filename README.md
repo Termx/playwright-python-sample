@@ -44,3 +44,8 @@ To run a specific feature or scenario:
 behave features/<name>.feature
 behave features/<name>.feature:<line>
 ```
+
+Tips & Notes:
+- Using a virtual environment ensures your system Python stays clean.
+- Playwright’s browser installation step needs internet access and disk space (~hundreds of MB).
+- If you encounter “module not found” errors, double-check that your venv is activated and that Playwright is installed in that environment.

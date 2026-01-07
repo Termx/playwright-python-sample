@@ -1,18 +1,46 @@
-Basic template using Playwright with Behave BDD, Page Object Model, and YAML.
+This project uses Playwright with Python (demo with pytest-bdd). The steps below get you up and running quickly.
 
 Prerequisites:
-- Python 3.13.7
-- VS Code with Python extension
+- Python 3.13+ (recommanded)
+- A Python virtual environment (optional but recommended).
 
-Install Dependencies:
-```python
+Create and activate a virtual environment (optional but best practice):
+```bash
+# macOS / Linux
+python -m venv .venv
+source .venv/bin/activate
+
+# Windows (PowerShell)
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+Upgrade pip:
+```bash
+python -m pip install --upgrade pip
+```
+
+Install Dependencies
+
+Install project requirements:
+```bash
 pip install -r requirements.txt
 ```
-Run tests:
-```python
+Install Playwright Browsers
+
+Playwright requires browser binaries for Chromium, Firefox, and WebKit. Install them with:
+```bash
+python -m playwright install
+```
+This downloads the browser engines Playwright automates.
+
+Running tests
+
+With everything installed, run your BDD tests using Behave:
+```bash
 behave
 ```
-Run a specific file or test:
-```python
-behave features/xxxx.feature
-behave features/xxxx.feature:xx (xx is line number)
+To run a specific feature or scenario:
+```bash
+behave features/<name>.feature
+behave features/<name>.feature:<line>
+```

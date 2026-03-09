@@ -12,7 +12,6 @@ class LoginPage:
         self.email_error = "[data-test='email-error']"
         self.password_error = "[data-test='password-error']"
         self.forgot_password_link = "[data-test='forgot-password-link']"
-        self.forgot_password_field = "input[id='email']"
         self.forgot_password_button = "[data-test='forgot-password-submit']"
 
     def navigate(self):
@@ -48,10 +47,8 @@ class LoginPage:
         self.page.click(self.forgot_password_link)
         expect(self.page).to_have_url(f"{self.base_url}/auth/forgot-password", timeout=10000)
 
-# Password reset functionality
-
     def request_password_reset(self, email):
-        self.page.fill(self.forgot_password_field, email)
+        self.page.fill(self.email_field, email)
         self.page.click(self.forgot_password_button)
     
     def password_reset_message(self):

@@ -30,7 +30,8 @@ def after_all(context):
 def before_scenario(context, scenario):
     print(f"before_scenario: Launching browser for {scenario.name}")
     try:
-        context.browser = context.playwright.chromium.launch(headless=False)
+        headless = os.environ.get("HEADLESS", "true").lower() == "true"
+        context.browser = context.playwright.chromium.launch(headless=headless)
         context.browser_context = context.browser.new_context(
             viewport={'width': 1920, 'height': 1080}
         )
@@ -42,22 +43,14 @@ def before_scenario(context, scenario):
 
 def after_scenario(context, scenario):
     print(f"after_scenario: Cleaning up for {scenario.name}")
-    if scenario.status == "failed" and hasattr(context, 'page'):
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        filename = f"reports/screenshots/{scenario.name.replace(' ', '_')}_{timestamp}.png"
-        context.page.screenshot(path=filename, full_page=True)
-        print(f"Screenshot saved to: {filename}")
-
-        # Attach to Behave report only if supported (e.g., with --format=html)
-        try:
-            with open(filename, 'rb') as f:
-                context.attach(f.read(), 'image/png')
-        except AttributeError:
-            print("Attach not supported in this Behave configuration; screenshot saved to file only.")
-        except Exception as attach_err:
-            print(f"Failed to attach screenshot: {attach_err}")
-
-    if hasattr(context, 'browser_context'):
-        context.browser_context.close()
-    if hasattr(context, 'browser'):
-        context.browser.close()
+    try:
+        if scenario.status == "failed" and hasattr(context, 'page'):
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            filename = f"reports/screenshots/{scenario.name.replace(' ', '_')}_{timestamp}.png"
+            context.page.screenshot(path=filename, full_page=True)
+            print(f"Screenshot saved to: {filename}")
+    finally:
+        if hasattr(context, 'browser_context'):
+            context.browser_context.close()
+        if hasattr(context, 'browser'):
+            context.browser.close()

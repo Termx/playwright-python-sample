@@ -13,6 +13,7 @@ class LoginPage:
         self.password_error = "[data-test='password-error']"
         self.forgot_password_link = "[data-test='forgot-password-link']"
         self.forgot_password_button = "[data-test='forgot-password-submit']"
+        self.forgot_password_alert = "div[role='alert']"
 
     def navigate(self):
         self.page.goto(f"{self.base_url}/auth/login")
@@ -52,10 +53,10 @@ class LoginPage:
         self.page.click(self.forgot_password_button)
     
     def password_reset_message(self):
-        expect(self.page.locator('div[role="alert"]')).to_have_text('Your password is successfully updated!', timeout=5000)
+        expect(self.page.locator(self.forgot_password_alert)).to_have_text('Your password is successfully updated!', timeout=5000)
     
     def password_reset_invalid_email_error(self):
-        expect(self.page.locator('div[id="email-error"]')).to_have_text('The selected email is invalid.', timeout=5000)
+        expect(self.page.locator(self.email_error)).to_have_text('The selected email is invalid.', timeout=5000)
     
     def password_reset_no_email_error(self):
-        expect(self.page.locator('div[id="email-error"]')).to_have_text('Email is required', timeout=5000)
+        expect(self.page.locator(self.email_error)).to_have_text('Email is required', timeout=5000)

@@ -16,12 +16,12 @@ def step_go_to_login_page(context):
 
 @when("I enter valid credentials")
 def step_enter_valid_credentials(context):
-    context.login_page.enter_valid_credentials(context.config["good_email"], context.config["good_pw"])
+    context.login_page.enter_credentials(context.config["good_email"], context.config["good_pw"])
     context.login_page.submit()
 
 @when("I enter invalid credentials")
 def step_enter_invalid_credentials(context):
-    context.login_page.enter_invalid_credentials(context.config["bad_email"], context.config["bad_pw"])
+    context.login_page.enter_credentials(context.config["bad_email"], context.config["bad_pw"])
     context.login_page.submit()
 
 @when("I enter credentials without an email")

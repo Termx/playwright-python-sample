@@ -1,4 +1,4 @@
-This project uses Playwright with Python (demo with pytest-bdd). The steps below get you up and running quickly.
+This project uses Playwright with Python (demo with Behave). The steps below get you up and running quickly.
 
 Prerequisites:
 - Python 3.13+ (recommanded)

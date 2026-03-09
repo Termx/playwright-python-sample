@@ -19,11 +19,7 @@ class LoginPage:
         self.page.goto(f"{self.base_url}/auth/login")
         expect(self.page).to_have_url(f"{self.base_url}/auth/login", timeout=10000)
 
-    def enter_valid_credentials(self, email, password):
-        self.page.fill(self.email_field, email)
-        self.page.fill(self.password_field, password)
-
-    def enter_invalid_credentials(self, email, password):
+    def enter_credentials(self, email, password):
         self.page.fill(self.email_field, email)
         self.page.fill(self.password_field, password)
 

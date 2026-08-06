@@ -48,22 +48,6 @@ playwright-python-sample/
 
 ---
 
-## Test Scenarios
-
-The `features/login.feature` file covers the following scenarios:
-
-| # | Scenario |
-|---|---|
-| 1 | Successful login with valid credentials |
-| 2 | Unsuccessful login with invalid credentials |
-| 3 | Error message when email is not provided |
-| 4 | Error message when password is not provided |
-| 5 | Request a password reset |
-| 6 | Password reset with an invalid email shows an error |
-| 7 | Password reset without an email address shows an error |
-
----
-
 ## Getting Started
 
 ### Prerequisites
